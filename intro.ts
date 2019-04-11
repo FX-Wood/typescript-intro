@@ -84,3 +84,21 @@ let barnCat: object = {
 }
 
 isGoodDog(oneGoodBoy)
+
+// enums
+enum Cheeses {Brie,Cheddar,Swiss}
+
+enum Colors {
+    Red=10, Green=5, Blue=3
+}
+
+// generics
+type BadMessage = 'ErrOR' | 'Warnnn'
+type GoodMessage = 'All is well' | 'There is coffee ready in the kitchen'
+
+function shout<T>(message: T): string {
+    return message.toString().toUpperCase();
+}
+
+console.log(shout<BadMessage>('ErrOR'))
+console.log(shout<GoodMessage>('All is well'))
