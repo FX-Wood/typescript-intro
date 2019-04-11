@@ -37,3 +37,50 @@ function errorLogger(items: string[]): void {
         console.log(item)
     })
 }
+
+// unions
+var myUnion: string | null = null;
+
+myUnion = "see this is ok"
+
+// invalid
+// myUnion = '7'; 
+
+// custom types
+type ColorChoice = 'Red' | 'Green' | 'Blue';
+
+let myColor: ColorChoice = 'Red'
+
+// interfaces
+interface DogObject {
+    name: string;
+    age: number;
+    isGood: boolean;
+    wagsTail?: boolean;
+}
+
+function isGoodDog(dog: DogObject): boolean {
+    let {name, age, isGood} = dog;
+    let message = `${name} is ${age} and is very good! ${dog.wagsTail ? 'wag wag': ''}`
+    if (!isGood) {
+        console.log('How dare you?! All dogs are good')
+        dog.isGood = true;
+    }
+    return true
+}
+
+let oneGoodBoy: DogObject = {
+    name: 'Harley Muffinhead',
+    age: 7,
+    isGood: true,
+    wagsTail: true
+}
+
+let barnCat: object = {
+    name: 'Scar Tatterear',
+    age: Infinity,
+    clawedKiller: true,
+    isGood: false
+}
+
+isGoodDog(oneGoodBoy)
